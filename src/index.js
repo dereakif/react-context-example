@@ -2,11 +2,5 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
-import { TodosProvider } from "./contexts/TodosContext";
 
-ReactDOM.render(
-  <TodosProvider>
-    <App />
-  </TodosProvider>,
-  document.getElementById("root")
-);
+ReactDOM.render(<App />, document.getElementById("root"));

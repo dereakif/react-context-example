@@ -1,9 +1,8 @@
 import React, { Component } from "react";
-
+import ToggleButton from "../../components/ThemeChanger/ToggleButton";
+import ThemeBox from "../../components/ThemeChanger/ThemeBox";
+import { ThemeProvider } from "../../contexts/ThemeContext";
 export default class ThemeChanger extends Component {
-  state = {
-    darkTheme: true,
-  };
   render() {
     return (
       <div
@@ -15,21 +14,10 @@ export default class ThemeChanger extends Component {
           justifyContent: "center",
         }}
       >
-        <button>Change Theme</button>
-        <div
-          style={{
-            height: "200px",
-            width: "200px",
-            border: "1px solid black",
-            backgroundColor: this.state.darkTheme ? "black" : "white",
-            color: this.state.darkTheme ? "white" : "black",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-          }}
-        >
-          Theme {this.state.darkTheme ? "Dark" : "White"}
-        </div>
+        <ThemeProvider>
+          <ToggleButton />
+          <ThemeBox />
+        </ThemeProvider>
       </div>
     );
   }

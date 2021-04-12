@@ -6,11 +6,13 @@ export default class Home extends Component {
       <div
         style={{
           display: "flex",
+          flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
         }}
       >
-        <h3>Home Page</h3>
+        <h2>Home Page</h2>
+        <h2>Context API examples with func and class components</h2>
       </div>
     );
   }
