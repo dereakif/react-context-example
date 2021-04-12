@@ -1,11 +1,48 @@
+import React from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import Todo from "./Pages/Todo/Todo";
 import "./App.css";
-import Home from "./Pages/Home/Home";
-function App() {
+
+export default function App() {
   return (
-    <div className="App">
-      <Home />
-    </div>
+    <Router>
+      <div>
+        <nav
+          style={{
+            display: "flex",
+            backgroundColor: "black",
+            justifyContent: "space-around",
+          }}
+        >
+          <Link
+            style={{
+              color: "white",
+              textDecoration: "none",
+              fontSize: "1.5rem",
+            }}
+            to="/"
+          >
+            Home
+          </Link>
+          <Link
+            style={{
+              backgroundColor: "black",
+              color: "white",
+              textDecoration: "none",
+              fontSize: "1.5rem",
+            }}
+            to="/todo"
+          >
+            Todo
+          </Link>
+        </nav>
+
+        <Switch>
+          <Route path="/">
+            <Todo />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
 }
-
-export default App;
